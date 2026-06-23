@@ -1,0 +1,1 @@
+Open index.html in a browser. Text boxes are editable by clicking text. Positions and sizes are in inline style attributes; global styles are in style.css. Images appear one by one on click. Canvas is 16:9, original 4:3 content centered.

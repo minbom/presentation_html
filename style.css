@@ -1,0 +1,29 @@
+
+:root { --canvas-w: 1280px; --canvas-h: 720px; --bg: #111; --slide-bg: #5178ae; --text: #111; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family: Arial, "Noto Sans KR", "Malgun Gothic", sans-serif; overflow:hidden; }
+#deck { width:100vw; height:100vh; display:flex; align-items:center; justify-content:center; }
+.slide { position:relative; width:var(--canvas-w); height:var(--canvas-h); background:var(--slide-bg); overflow:hidden; display:none; box-shadow:0 0 24px rgba(0,0,0,.45); transform-origin:center center; }
+.slide.active { display:block; }
+.shape { position:absolute; }
+.text-box { white-space:pre-wrap; overflow:visible; line-height:calc(1.25em + 2px); padding:4px 6px; outline:0; color:#111; }
+.bullet-list { white-space:normal; line-height:calc(1.25em + 2px); }
+.bullet-list .bullet-line { margin:0; }
+.bullet-list .level-1 { padding-left:4px; }
+.bullet-list .level-2 { padding-left:28px; }
+.bullet-list .level-3 { padding-left:50px; }
+.bullet-list .level-4 { padding-left:72px; }
+.text-box:focus { outline:2px dashed #777; background:rgba(255,255,200,.25); }
+.hl { background:#fff200; color:#111; padding:0 .06em; }
+.hl.spacer { display:inline-block; min-width:54px; height:1.1em; vertical-align:baseline; }
+.red { color:rgb(12.8% 66.8% 26.6%); }
+.pic { object-fit:contain; }
+.ppt-table { border-collapse:collapse; outline:0; }
+.ppt-table td { border:1px solid #888; padding:2px 10px; vertical-align:middle; line-height:calc(1.25em + 2px); }
+.ppt-table tr:nth-child(odd) td { background:rgba(0,0,0,.05); }
+.ppt-table td:first-child { font-weight:bold; text-align:center; }
+.step { visibility:hidden; opacity:0; transition:opacity .18s ease; }
+.step.visible { visibility:visible; opacity:1; }
+#hud { position:fixed; right:14px; bottom:10px; color:#ddd; font:14px Arial, sans-serif; background:rgba(0,0,0,.35); padding:5px 8px; border-radius:6px; user-select:none; }
+#help { position:fixed; left:14px; bottom:10px; color:#ddd; font:13px Arial, sans-serif; background:rgba(0,0,0,.35); padding:5px 8px; border-radius:6px; user-select:none; }
+@media print { body{background:#fff;} #hud,#help{display:none;} .slide{display:block; page-break-after:always; box-shadow:none; transform:none!important;} .step{visibility:visible; opacity:1;} }
